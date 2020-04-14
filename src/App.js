@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import { Card, Icon, Image } from "semantic-ui-react";
+import { Card, Icon, Image, Input, Button } from "semantic-ui-react";
 
 const API_KEY = "844dba0bfd8f3a4f3799f6130ef9e335";
 const API_URL = "https://api.themoviedb.org/3/";
@@ -45,7 +45,15 @@ function App() {
 		);
 	});
 
-	return <div className="App">{movies}</div>;
+	return (
+		<div className="App">
+			<div>
+				<Input placeholder="Search..." />
+				<Button content="Search" />
+			</div>
+			{movies}
+		</div>
+	);
 }
 
 export default App;
