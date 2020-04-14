@@ -2,18 +2,19 @@ import React, { useEffect } from "react";
 import "./App.css";
 import Search from "./components/Search";
 import MovieCard from "./components/MovieCard";
-import Carousel from "@brainhubeu/react-carousel";
-import "@brainhubeu/react-carousel/lib/style.css";
 import CarouselSlider from "./components/CarouselSlider";
+import Button from "./components/Button";
 
 const API_KEY = "844dba0bfd8f3a4f3799f6130ef9e335";
 const API_URL = "https://api.themoviedb.org/3/";
 const IMAGE_URL = "https://image.tmdb.org/t/p/";
 
 function App() {
+	const [upcomingMovies, setUpcomingMovies] = React.useState([]);
 	const [popularMovies, setPopularMovies] = React.useState([]);
 	const [searchMovies, setSearchMovies] = React.useState("");
 	const [typedMovie, setTypedMovie] = React.useState("");
+	const [currentPage, setCurrentPage] = React.useState(0);
 
 	const handleSearch = e => {
 		setTypedMovie(e.target.value);
@@ -28,12 +29,34 @@ function App() {
 		setTypedMovie("");
 	};
 
-	useEffect(() => {
-		fetch(`${API_URL}movie/popular?api_key=${API_KEY}&language=en-UK&page=1`)
+	const handleLoadMore = () => {
+		fetch(
+			`${API_URL}discover/movie?api_key=${API_KEY}&language=en-UK&sort_by=popularity.desc&page=${
+				currentPage + 1
+			}`
+		)
 			.then(response => response.json())
 			.then(response => {
-				console.log(response);
-				setPopularMovies(response.results);
+				setPopularMovies([...popularMovies, ...response.results]);
+				setCurrentPage(response.page);
+			});
+	};
+
+	useEffect(() => {
+		Promise.all([
+			fetch(
+				`${API_URL}movie/upcoming?api_key=${API_KEY}&language=en-UK&page=1`
+			),
+			fetch(
+				`${API_URL}discover/movie?api_key=${API_KEY}&language=en-UK&sort_by=popularity.desc&page=1`
+			),
+		])
+			.then(response => Promise.all(response.map(response => response.json())))
+			.then(responseArr => {
+				console.log(responseArr);
+				setUpcomingMovies(responseArr[0].results);
+				setPopularMovies(responseArr[1].results);
+				setCurrentPage(responseArr[1].page);
 			});
 	}, []);
 
@@ -43,13 +66,14 @@ function App() {
 			: item;
 	});
 
-	const popMoviesImages = popularMovies.map(imageResult => {
-		return <img src={`${IMAGE_URL}w185${imageResult.poster_path}`} />;
+	const upcomingMoviesImages = upcomingMovies.map(imageResult => {
+		return <img src={`${IMAGE_URL}w185${imageResult.poster_path}`} alt="" />;
 	});
 
 	const movies = filterMovie.map(result => {
 		return (
 			<MovieCard
+				id={result.id}
 				src={`${IMAGE_URL}w300${result.poster_path}`}
 				title={result.original_title}
 				date={result.release_date}
@@ -61,7 +85,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<CarouselSlider images={popMoviesImages} />
+			<CarouselSlider images={upcomingMoviesImages} />
 			<Search
 				onChange={handleSearch}
 				value={typedMovie}
@@ -69,8 +93,13 @@ function App() {
 				showAllClick={reset}
 			/>
 			<div className="movieGrid">
-				{popularMovies ? movies : <p>Loading..</p>}
+				{upcomingMovies ? movies : <p>Loading..</p>}
 			</div>
+			<Button
+				content="Load More"
+				onClick={handleLoadMore}
+				style={{ margin: "1em" }}
+			/>
 		</div>
 	);
 }
