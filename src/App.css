@@ -1,3 +1,12 @@
+/* :root{
+  032535 - ffb515 - ff9a00 - ff5700 - da4302 
+} */
+
+body {
+	background-color: #032535;
+	color: white;
+}
+
 .App {
 	text-align: center;
 	max-width: 1200px;
@@ -46,4 +55,14 @@
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 	margin: 20px auto;
+}
+
+.search {
+	margin: 20px auto;
+	display: flex;
+	justify-content: center;
+}
+
+.search * {
+	margin: 0.2em;
 }
