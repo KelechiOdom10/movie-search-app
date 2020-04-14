@@ -1,9 +1,7 @@
 .App {
   text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: 20px auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .App-logo {
@@ -44,4 +42,12 @@
 
 .imagg {
   width: auto
+}
+
+.movieGrid {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 20px auto;
 }
