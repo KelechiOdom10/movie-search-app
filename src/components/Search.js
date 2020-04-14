@@ -3,7 +3,7 @@ import { Input, Button } from "semantic-ui-react";
 
 function Search(props) {
 	return (
-		<div>
+		<div style={{ margin: "1em" }}>
 			<Input
 				placeholder="Search..."
 				onChange={props.onChange}

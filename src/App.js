@@ -2,8 +2,11 @@ import React, { useEffect } from "react";
 import "./App.css";
 import Search from "./components/Search";
 import MovieCard from "./components/MovieCard";
-import { Carousel } from "react-bootstrap";
+import Carousel from "@brainhubeu/react-carousel";
+import "@brainhubeu/react-carousel/lib/style.css";
+import CarouselSlider from "./components/CarouselSlider";
 
+const API_KEY = "844dba0bfd8f3a4f3799f6130ef9e335";
 const API_URL = "https://api.themoviedb.org/3/";
 const IMAGE_URL = "https://image.tmdb.org/t/p/";
 
@@ -26,9 +29,7 @@ function App() {
 	};
 
 	useEffect(() => {
-		fetch(
-			`${API_URL}movie/popular?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-UK&page=1`
-		)
+		fetch(`${API_URL}movie/popular?api_key=${API_KEY}&language=en-UK&page=1`)
 			.then(response => response.json())
 			.then(response => {
 				console.log(response);
@@ -40,6 +41,10 @@ function App() {
 		return searchMovies !== ""
 			? item.original_title.toLowerCase().includes(searchMovies.toLowerCase())
 			: item;
+	});
+
+	const popMoviesImages = popularMovies.map(imageResult => {
+		return <img src={`${IMAGE_URL}w185${imageResult.poster_path}`} />;
 	});
 
 	const movies = filterMovie.map(result => {
@@ -56,59 +61,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<Carousel style={{ width: "300px" }}>
-				<Carousel.Item style={{ width: "auto" }}>
-					<img
-						className="d-block w-100"
-						src="https://image.tmdb.org/t/p/w300/4AeGz1Jwnq6ky2kfLT95Tm8nEiw.jpg"
-						alt="First slide"
-						style={{
-							height: "400px",
-							display: "block",
-							marginLeft: "auto",
-							marginRight: "auto",
-							width: "50%",
-							objectFit: "contain",
-							objectPosition: "50% 50%",
-						}}
-					/>
-					<Carousel.Caption></Carousel.Caption>
-				</Carousel.Item>
-				<Carousel.Item>
-					<img
-						className="d-block w-100"
-						src="https://image.tmdb.org/t/p/w300/xBHvZcjRiWyobQ9kxBhO6B2dtRI.jpg"
-						alt="First slide"
-						style={{
-							height: "400px",
-							display: "block",
-							marginLeft: "auto",
-							marginRight: "auto",
-							width: "50%",
-							objectFit: "contain",
-							objectPosition: "50% 50%",
-						}}
-					/>
-					<Carousel.Caption></Carousel.Caption>
-				</Carousel.Item>
-				<Carousel.Item>
-					<img
-						className="d-block w-100"
-						src="https://image.tmdb.org/t/p/w300/db32LaOibwEliAmSL2jjDF6oDdj.jpg"
-						alt="First slide"
-						style={{
-							height: "400px",
-							display: "block",
-							marginLeft: "auto",
-							marginRight: "auto",
-							width: "50%",
-							objectFit: "contain",
-							objectPosition: "50% 50%",
-						}}
-					/>
-					<Carousel.Caption></Carousel.Caption>
-				</Carousel.Item>
-			</Carousel>
+			<CarouselSlider images={popMoviesImages} />
 			<Search
 				onChange={handleSearch}
 				value={typedMovie}
