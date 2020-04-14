@@ -1,24 +1,32 @@
 import React from "react";
-import { Card, Icon, Image } from "semantic-ui-react";
+import { Icon } from "semantic-ui-react";
 
 function MovieCard(props) {
 	return (
-		<Card>
-			<Image src={props.src} wrapped ui={false} size="small" fluid />
-			<Card.Content>
-				<Card.Header>{props.title}</Card.Header>
-				<Card.Meta>
-					<span className="date">{props.date}</span>
-				</Card.Meta>
-				{/* <Card.Description>{props.overview}</Card.Description> */}
-			</Card.Content>
-			<Card.Content extra>
-				<a href="">
-					<Icon name="star" />
-					{props.rating}/10
-				</a>
-			</Card.Content>
-		</Card>
+		<div
+			style={{
+				border: "0px solid white",
+				maxWidth: "200px",
+				borderRadius: "5px",
+				margin: "10px",
+				background: "#021822",
+			}}
+		>
+			<img
+				src={props.src}
+				alt=""
+				style={{
+					width: "200px",
+					height: "280px",
+					borderRadius: "5px",
+				}}
+			/>
+			<hr />
+			<h4 style={{ marginTop: "-10px" }}>{props.title}</h4>
+			<p style={{ fontStyle: "italic" }}>{props.date}</p>
+			<Icon name="star" />
+			<span>{props.rating}/10</span>
+		</div>
 	);
 }
 
