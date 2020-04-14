@@ -1,13 +1,14 @@
 import React from "react";
-import { Input, Button } from "semantic-ui-react";
+import Button from "./Button";
 
 function Search(props) {
 	return (
-		<div style={{ margin: "1em" }}>
-			<Input
+		<div className="search">
+			<input
 				placeholder="Search..."
 				onChange={props.onChange}
 				value={props.value}
+				style={{ padding: "10px", borderRadius: "5px", border: "none" }}
 			/>
 			<Button content="Search" onClick={props.searchClick} />
 			<Button content="Show All" onClick={props.showAllClick} />
