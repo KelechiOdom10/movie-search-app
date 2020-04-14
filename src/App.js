@@ -8,6 +8,21 @@ const IMAGE_URL = "https://image.tmdb.org/t/p/";
 
 function App() {
 	const [popularMovies, setPopularMovies] = React.useState([]);
+	const [searchMovies, setSearchMovies] = React.useState("");
+	const [typedMovie, setTypedMovie] = React.useState("");
+
+	const handleSearch = e => {
+		setTypedMovie(e.target.value);
+	};
+
+	const typedToSearch = () => {
+		setSearchMovies(typedMovie);
+	};
+
+	const reset = () => {
+		setSearchMovies("");
+		setTypedMovie("");
+	};
 
 	useEffect(() => {
 		fetch(`${API_URL}movie/popular?api_key=${API_KEY}&language=en-UK&page=1`)
@@ -18,7 +33,13 @@ function App() {
 			});
 	}, []);
 
-	const movies = popularMovies.map(result => {
+	const filterMovie = popularMovies.filter(item => {
+		return searchMovies !== ""
+			? item.original_title.toLowerCase().includes(searchMovies.toLowerCase())
+			: item;
+	});
+
+	const movies = filterMovie.map(result => {
 		return (
 			<Card>
 				<Image
@@ -48,10 +69,15 @@ function App() {
 	return (
 		<div className="App">
 			<div>
-				<Input placeholder="Search..." />
-				<Button content="Search" />
+				<Input
+					placeholder="Search..."
+					onChange={handleSearch}
+					value={typedMovie}
+				/>
+				<Button content="Search" onClick={typedToSearch} />
+				<Button content="Show All" onClick={reset} />
 			</div>
-			{movies}
+			{popularMovies ? movies : <p>Loading..</p>}
 		</div>
 	);
 }
