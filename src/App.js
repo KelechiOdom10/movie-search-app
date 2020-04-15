@@ -5,6 +5,7 @@ import MovieCard from "./components/MovieCard";
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 import CarouselSlider from "./components/CarouselSlider";
+import NavBar from "./components/NavBar";
 
 const API_KEY = "844dba0bfd8f3a4f3799f6130ef9e335";
 const API_URL = "https://api.themoviedb.org/3/";
@@ -60,6 +61,8 @@ function App() {
 	});
 
 	return (
+		<div>
+		<NavBar />
 		<div className="App">
 			<CarouselSlider images={popMoviesImages} />
 			<Search
@@ -72,7 +75,9 @@ function App() {
 				{popularMovies ? movies : <p>Loading..</p>}
 			</div>
 		</div>
-	);
+		</div>
+	
+	)
 }
 
 export default App;

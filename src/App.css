@@ -47,3 +47,38 @@
 	justify-content: space-evenly;
 	margin: 20px auto;
 }
+
+.nav{
+	display: flex;
+	justify-content: space-around;
+	max-height: 8vh;
+	place-items: center;
+	
+}
+
+.nav-links{
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	margin-top: 10px;
+	text-decoration: none;
+}
+
+.nav-links li{
+	margin-right: 20px;
+	text-decoration: none;
+	padding: 4px ;
+
+}
+
+.nav-links li:hover{
+	background: #ff9A00;
+	padding: 4px ;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block ;
+                border-radius: 5px;
+                border: none;
+				color: white;
+				
+}

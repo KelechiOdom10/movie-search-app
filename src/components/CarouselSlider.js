@@ -3,6 +3,7 @@ import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 
 function CarouselSlider(props) {
+	return(
 	<Carousel
 		slidesPerPage={5}
 		slidesPerScroll={4}
@@ -14,7 +15,8 @@ function CarouselSlider(props) {
 		addArrowClickHandler
 	>
 		{props.images}
-	</Carousel>;
+	</Carousel>
+	)
 }
 
 export default CarouselSlider;
