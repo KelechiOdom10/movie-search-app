@@ -73,7 +73,7 @@ body {
 	max-height: 8vh;
 	place-items: center;
 	margin-bottom: 2em;
-	background: linear-gradient(to left, #7b59ff, #ff9a00);
+	background: linear-gradient(to right, #7b59ff, #ff9a00);
 }
 
 .nav-links {
@@ -113,4 +113,10 @@ body {
 
 .insight:hover {
 	color: #ff9a00;
+}
+
+@media only screen and (max-width: 600px) {
+	.insight {
+		display: none;
+	}
 }
