@@ -1,5 +1,6 @@
 import React from "react";
 import { Icon } from "semantic-ui-react";
+import { Link } from "@reach/router";
 
 function MovieCard(props) {
 	return (
@@ -25,7 +26,9 @@ function MovieCard(props) {
 			</a>
 
 			<hr />
-			<h4 style={{ marginTop: "-10px" }}>{props.title}</h4>
+			<Link to={props.id} style={{ textDecoration: "none", color: "white" }}>
+				<h4 style={{ marginTop: "-10px" }}>{props.title}</h4>
+			</Link>
 			<p style={{ fontStyle: "italic" }}>{props.date}</p>
 			<Icon name="star" />
 			<span>{props.rating}/10</span>
