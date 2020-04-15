@@ -12,15 +12,18 @@ function MovieCard(props) {
 				background: "#021822",
 			}}
 		>
-			<img
-				src={props.src}
-				alt=""
-				style={{
-					width: "200px",
-					height: "280px",
-					borderRadius: "5px",
-				}}
-			/>
+			<a href={props.link} target="_blank" rel="noopener noreferrer">
+				<img
+					src={props.src}
+					alt=""
+					style={{
+						width: "200px",
+						height: "280px",
+						borderRadius: "5px",
+					}}
+				/>
+			</a>
+
 			<hr />
 			<h4 style={{ marginTop: "-10px" }}>{props.title}</h4>
 			<p style={{ fontStyle: "italic" }}>{props.date}</p>
