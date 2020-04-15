@@ -4,6 +4,7 @@ import Search from "./components/Search";
 import MovieCard from "./components/MovieCard";
 import CarouselSlider from "./components/CarouselSlider";
 import Button from "./components/Button";
+import NavBar from "./components/NavBar";
 
 const API_KEY = "844dba0bfd8f3a4f3799f6130ef9e335";
 const API_URL = "https://api.themoviedb.org/3/";
@@ -84,22 +85,25 @@ function App() {
 	});
 
 	return (
-		<div className="App">
-			<CarouselSlider images={upcomingMoviesImages} />
-			<Search
-				onChange={handleSearch}
-				value={typedMovie}
-				searchClick={typedToSearch}
-				showAllClick={reset}
-			/>
-			<div className="movieGrid">
-				{upcomingMovies ? movies : <p>Loading..</p>}
+		<div>
+			<NavBar />
+			<div className="App">
+				<CarouselSlider images={upcomingMoviesImages} />
+				<Search
+					onChange={handleSearch}
+					value={typedMovie}
+					searchClick={typedToSearch}
+					showAllClick={reset}
+				/>
+				<div className="movieGrid">
+					{upcomingMovies ? movies : <p>Loading..</p>}
+				</div>
+				<Button
+					content="Load More"
+					onClick={handleLoadMore}
+					style={{ margin: "1em" }}
+				/>
 			</div>
-			<Button
-				content="Load More"
-				onClick={handleLoadMore}
-				style={{ margin: "1em" }}
-			/>
 		</div>
 	);
 }
