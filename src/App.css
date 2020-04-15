@@ -103,3 +103,13 @@ body {
 	border: none;
 	color: white;
 }
+
+.insight {
+	font-family: "Arvo", serif;
+	color: white;
+	font-size: x-large;
+	font-weight: bold;
+}
+.insight:hover {
+	color: #ff9a00;
+}

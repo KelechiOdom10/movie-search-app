@@ -4,8 +4,9 @@ import { Link } from "@reach/router";
 function NavBar() {
 	return (
 		<div className="nav">
-			<Link to="/">
+			<Link to="/" style={{ textDecoration: "none" }}>
 				<img src="./assets/movieicon1.svg" alt="" style={{ height: "6vh" }} />
+				<span className="insight"> Insight</span>
 			</Link>
 			<ul className="nav-links">
 				<Link to="/">
