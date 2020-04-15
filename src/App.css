@@ -73,7 +73,7 @@ body {
 	max-height: 8vh;
 	place-items: center;
 	margin-bottom: 2em;
-	background-color: #7b59ff;
+	background: linear-gradient(to left, #7b59ff, #ff9a00);
 }
 
 .nav-links {
@@ -110,6 +110,7 @@ body {
 	font-size: x-large;
 	font-weight: bold;
 }
+
 .insight:hover {
 	color: #ff9a00;
 }
