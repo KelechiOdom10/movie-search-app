@@ -72,7 +72,7 @@ function Home() {
 	const movies = filterMovie.map(result => {
 		return (
 			<MovieCard
-				id={result.id}
+				path={`movies/${result.id}`}
 				src={`${IMAGE_URL}w300${result.poster_path}`}
 				title={result.original_title}
 				date={result.release_date}

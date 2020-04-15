@@ -26,7 +26,7 @@ function MovieCard(props) {
 			</a>
 
 			<hr />
-			<Link to={props.id} style={{ textDecoration: "none", color: "white" }}>
+			<Link to={props.path} style={{ textDecoration: "none", color: "white" }}>
 				<h4 style={{ marginTop: "-10px" }}>{props.title}</h4>
 			</Link>
 			<p style={{ fontStyle: "italic" }}>{props.date}</p>
