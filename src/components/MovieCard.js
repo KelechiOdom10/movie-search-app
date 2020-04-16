@@ -13,7 +13,7 @@ function MovieCard(props) {
 				background: "#021822",
 			}}
 		>
-			<a href={props.link} target="_blank" rel="noopener noreferrer">
+			<Link to={props.path} style={{ textDecoration: "none", color: "white" }}>
 				<img
 					src={props.src}
 					alt=""
@@ -23,15 +23,14 @@ function MovieCard(props) {
 						borderRadius: "5px",
 					}}
 				/>
-			</a>
-
-			<hr />
-			<Link to={props.path} style={{ textDecoration: "none", color: "white" }}>
-				<h4 style={{ marginTop: "-10px" }}>{props.title}</h4>
 			</Link>
-			<p style={{ fontStyle: "italic" }}>{props.date}</p>
-			<Icon name="star" />
-			<span>{props.rating}/10</span>
+			<Link to={props.path} style={{ textDecoration: "none", color: "white" }}>
+				<h4 style={{ marginTop: "-5x" }}>{props.title}</h4>
+
+				<p style={{ fontStyle: "italic" }}>{props.date}</p>
+				<Icon name="star" />
+				<span>{props.rating}/10</span>
+			</Link>
 		</div>
 	);
 }
