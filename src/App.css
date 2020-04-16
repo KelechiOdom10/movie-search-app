@@ -114,16 +114,11 @@ body {
 	color: #ff9a00;
 }
 
-@media only screen and (max-width: 600px) {
-	.insight {
-		display: none;
-	}
-}
 
 .movieInfo {
 	padding: 1.5em;
 	background-size: cover;
-	min-height: 40vh;
+	min-height: 47vh;
 	font-size: 18px;
 	justify-content: center;
 	align-items: center;
@@ -132,15 +127,73 @@ body {
 
 .mainInfo {
 	margin: 0 auto;
-	max-width: 1200px;
+	max-width: 1000px;
 	display: flex;
 	border: none;
 	align-items: center;
 	justify-content: center;
 }
 
+.mainInfoImg {
+	width: auto;
+	border-radius: 10px;
+}
+
 .mainInfo>div {
 	padding: 1em;
 	display: flex;
 	flex-direction: column;
+}
+
+.tagLine {
+	color: #b4b4ff;
+	font-style: italic;
+	font-weight: 700;
+}
+
+.mainInfo {
+	font-weight: 800;
+}
+
+.mainInfo h3 {
+	font-weight: 800;
+}
+
+.plot {
+	font-style: italic;
+	color: white;
+	font-weight: 400;
+	text-align: justify;
+	line-height: 2rem;
+}
+
+.lastInfo {
+	display: flex;
+	text-align: start;
+	height: auto;
+	margin-top: .8em;
+}
+
+.lastInfo * {
+	margin-right: .7em;
+}
+
+
+
+@media only screen and (max-width: 650px) {
+	.insight {
+		display: none;
+	}
+
+	.lastInfo {
+		flex-wrap: wrap;
+	}
+
+	.mainInfo {
+		flex-direction: column;
+	}
+
+	.mainInfoImg {
+		width: 90vw;
+	}
 }
