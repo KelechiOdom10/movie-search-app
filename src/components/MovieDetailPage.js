@@ -15,7 +15,7 @@ function MovieDetailPage(props) {
 			.then(response => {
 				setMovieDetails([response]);
 			});
-	});
+	}, []);
 
 	const movieDetail = movieDetails.map((result, index) => {
 		const movieRevenue = result.revenue.toLocaleString(navigator.language, {
