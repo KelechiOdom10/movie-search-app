@@ -78,7 +78,6 @@ function Home() {
 				date={result.release_date}
 				overview={result.overview}
 				rating={result.vote_average}
-				link={`https://themoviedb.org/movie/${result.id}-${result.original_title}?api_key=${API_KEY}`}
 			/>
 		);
 	});
