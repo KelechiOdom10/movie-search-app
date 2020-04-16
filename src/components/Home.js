@@ -52,7 +52,6 @@ function Home() {
 		])
 			.then(response => Promise.all(response.map(response => response.json())))
 			.then(responseArr => {
-				console.log(responseArr);
 				setUpcomingMovies(responseArr[0].results);
 				setPopularMovies(responseArr[1].results);
 				setCurrentPage(responseArr[1].page);
@@ -65,13 +64,20 @@ function Home() {
 			: item;
 	});
 
-	const upcomingMoviesImages = upcomingMovies.map(imageResult => {
-		return <img src={`${IMAGE_URL}w185${imageResult.poster_path}`} alt="" />;
+	const upcomingMoviesImages = upcomingMovies.map((imageResult, index) => {
+		return (
+			<img
+				key={index}
+				src={`${IMAGE_URL}w185${imageResult.poster_path}`}
+				alt="Upcoming Movie Posters"
+			/>
+		);
 	});
 
-	const movies = filterMovie.map(result => {
+	const movies = filterMovie.map((result, index) => {
 		return (
 			<MovieCard
+				key={index}
 				path={`movies/${result.id}`}
 				src={`${IMAGE_URL}w300${result.poster_path}`}
 				title={result.original_title}
