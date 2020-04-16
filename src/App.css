@@ -72,7 +72,6 @@ body {
 	justify-content: space-around;
 	max-height: 8vh;
 	place-items: center;
-	margin-bottom: 2em;
 	background: linear-gradient(to right, #7b59ff, #ff9a00);
 }
 
@@ -119,4 +118,29 @@ body {
 	.insight {
 		display: none;
 	}
+}
+
+.movieInfo {
+	padding: 1.5em;
+	background-size: cover;
+	min-height: 40vh;
+	font-size: 18px;
+	justify-content: center;
+	align-items: center;
+	border: none;
+}
+
+.mainInfo {
+	margin: 0 auto;
+	max-width: 1200px;
+	display: flex;
+	border: none;
+	align-items: center;
+	justify-content: center;
+}
+
+.mainInfo>div {
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
 }
