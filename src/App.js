@@ -5,7 +5,7 @@ import MovieCard from "./components/MovieCard";
 import CarouselSlider from "./components/CarouselSlider";
 import Button from "./components/Button";
 
-const API_KEY = "844dba0bfd8f3a4f3799f6130ef9e335";
+const API_KEY = "d3a77a118591ff681bcbbcb56bfad803";
 const API_URL = "https://api.themoviedb.org/3/";
 const IMAGE_URL = "https://image.tmdb.org/t/p/";
 
@@ -79,10 +79,14 @@ function App() {
 				date={result.release_date}
 				overview={result.overview}
 				rating={result.vote_average}
-			/>
-		);
+			/> 
+		); 
 	});
 
+	function scrollToTop() {
+		window.scrollTo({top: 0, behavior: "smooth"});
+	}
+	
 	return (
 		<div className="App">
 			<CarouselSlider images={upcomingMoviesImages} />
@@ -99,6 +103,10 @@ function App() {
 				content="Load More"
 				onClick={handleLoadMore}
 				style={{ margin: "1em" }}
+			/>
+			<Button 
+			content="Back to Top"
+			onClick={scrollToTop}
 			/>
 		</div>
 	);
