@@ -4,6 +4,8 @@ import Search from "./components/Search";
 import MovieCard from "./components/MovieCard";
 import CarouselSlider from "./components/CarouselSlider";
 import Button from "./components/Button";
+import BackToTop from "react-back-to-top-button";
+import arrow from "./Logo_copy.png"
 
 const API_KEY = "d3a77a118591ff681bcbbcb56bfad803";
 const API_URL = "https://api.themoviedb.org/3/";
@@ -32,7 +34,7 @@ function App() {
 	const handleLoadMore = () => {
 		fetch(
 			`${API_URL}discover/movie?api_key=${API_KEY}&language=en-UK&sort_by=popularity.desc&page=${
-				currentPage + 1
+			currentPage + 1
 			}`
 		)
 			.then(response => response.json())
@@ -79,14 +81,10 @@ function App() {
 				date={result.release_date}
 				overview={result.overview}
 				rating={result.vote_average}
-			/> 
-		); 
+			/>
+		);
 	});
 
-	function scrollToTop() {
-		window.scrollTo({top: 0, behavior: "smooth"});
-	}
-	
 	return (
 		<div className="App">
 			<CarouselSlider images={upcomingMoviesImages} />
@@ -104,10 +102,18 @@ function App() {
 				onClick={handleLoadMore}
 				style={{ margin: "1em" }}
 			/>
-			<Button 
-			content="Back to Top"
-			onClick={scrollToTop}
-			/>
+			<BackToTop
+				showOnScrollDown
+				showAt={50}
+				speed={1500}
+				easing="easeInOutQuint"
+			>
+				<button
+					className="myBtn"
+				>
+					<img alt="arrow_up" src={arrow}></img>
+				</button>
+			</BackToTop>
 		</div>
 	);
 }
