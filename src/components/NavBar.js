@@ -5,7 +5,7 @@ function NavBar() {
 	return (
 		<div className="nav">
 			<Link to="/" style={{ textDecoration: "none" }}>
-				<img src="./assets/movieicon1.svg" alt="" style={{ height: "6vh" }} />
+				<img src="/assets/movieIcon1.svg" alt="" style={{ height: "6vh" }} />
 				<span className="insight"> Insight</span>
 			</Link>
 			<ul className="nav-links">
