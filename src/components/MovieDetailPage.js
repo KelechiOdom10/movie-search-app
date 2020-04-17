@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import MovieAppInfo from "./MovieAppInfo";
+import ActorCard from "./ActorCard";
 
 const API_KEY = "844dba0bfd8f3a4f3799f6130ef9e335";
 const API_URL = "https://api.themoviedb.org/3/";
@@ -7,13 +8,22 @@ const IMAGE_URL = "https://image.tmdb.org/t/p/";
 
 function MovieDetailPage(props) {
 	const [movieDetails, setMovieDetails] = React.useState([]);
+	const [movieActors, setMovieActors] = React.useState([]);
 	const movie_id = `${props.movieId}`;
 
 	useEffect(() => {
-		fetch(`${API_URL}movie/${movie_id}?api_key=${API_KEY}&language=en-UK&`)
-			.then(response => response.json())
-			.then(response => {
-				setMovieDetails([response]);
+		Promise.all([
+			fetch(`${API_URL}movie/${movie_id}?api_key=${API_KEY}&language=en-UK&`),
+			fetch(
+				`${API_URL}movie/${movie_id}/credits?api_key=${API_KEY}&language=en-UK&`
+			),
+		])
+			.then(response => Promise.all(response.map(response => response.json())))
+			.then(responseArr => {
+				setMovieDetails([responseArr[0]]);
+				setMovieActors(responseArr[1].cast);
+				console.log(movieDetails);
+				console.log(movieActors);
 			});
 	}, []);
 
@@ -41,6 +51,22 @@ function MovieDetailPage(props) {
 		);
 	});
 
-	return <div>{movieDetail}</div>;
+	const movieActor = movieActors.map((result, index) => {
+		return (
+			<ActorCard
+				key={index}
+				image={`${IMAGE_URL}w342${result.profile_path}`}
+				actor={result.name}
+				character={result.character}
+			/>
+		);
+	});
+
+	return (
+		<div>
+			{movieDetail}
+			<div className="actors">{movieActor}</div>
+		</div>
+	);
 }
 export default MovieDetailPage;
