@@ -138,7 +138,61 @@ function About() {
 			</a>
 			.
 		</p>
-		
+		<p>
+			Another component that needs to be installed is the "Back to Top" button: {" "}
+		</p>
+		<code>npm install react-back-to-top-button</code>
+		<br />
+			More information can be found{" "}
+			<a
+				href="https://www.npmjs.com/package/react-back-to-top-button"
+				target="_blank"
+				rel="noopener noreferrer"
+				>
+			here
+			</a>
+			.
+		<p>
+			As it was mentioned before, another component that would need to be installed 
+			is the Carousel:
+		</p>
+		<code>npm i @brainhubeu/react-carousel</code>
+		<br />
+		<h2>If you would like to contribute:</h2>
+		<p>
+			<ul>
+				<li>
+					Step 1: You can clone the movie app repo from GitHub to your local machine 
+					using this{" "}
+					<a 
+					href="https://github.com/KelechiOdom10/movie-search-app"
+					target="_blank"
+					rel="noopener noreferrer"
+					>
+						link
+					</a>
+				</li>
+				<li>
+					Step 2: Use all your amazing skills to make the changes to your liking
+				</li>
+				<li>
+					Step 3: Create a new pull request using this {" "}
+					<a 
+					href="https://github.com/KelechiOdom10/movie-search-app/compare"
+					target="_blank"
+					rel="noopener noreferrer"
+					>
+					link
+					</a>
+				</li>
+			</ul>
+		</p>
+		<p> 
+			<h2>Credits</h2>
+			We would like to say thank you to our amazing Apprenticeship coach Richard Ng 
+			who has provided his help and immense support as well a huge "Thank You" to 
+			our teammates in the apprenticeship.
+		</p>
 		</div>;
 }
 
