@@ -74,11 +74,61 @@
 .nav-links li:hover{
 	background: #ff9A00;
 	padding: 4px ;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block ;
-                border-radius: 5px;
-                border: none;
-				color: white;
+	text-align: center;
+	text-decoration: none;
+    display: inline-block ;
+    border-radius: 5px;
+	border: none;
+    color: white;
 				
 }
+
+
+.main-card{
+	width: 300px;
+	height: auto;
+	background: #032535;
+	border-radius: 10px;
+	box-shadow: 0px, 1px, 10px
+
+}
+
+
+.image{
+background: #27617d;
+width: 100%;
+height: auto;
+/* border-radius: 30%; */
+margin: 0 auto
+
+}
+
+.lower-card{
+background : #1a3d4d;
+height: auto;
+padding: 40px;
+margin-top: -20px;
+text-align: center;
+}
+
+.lower-card h3,h4,p{
+/* line-height: .6; */
+font-size: 15px;
+margin-bottom: 2px;
+}
+
+.lower-card h3{
+color: #ff9a00;
+font-style: italic;
+
+}
+
+.lower-card h4{
+color: #FFF
+
+}
+
+
+
+
+

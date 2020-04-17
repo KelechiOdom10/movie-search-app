@@ -6,6 +6,8 @@ import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 import CarouselSlider from "./components/CarouselSlider";
 import NavBar from "./components/NavBar";
+import Cards from "./components/ActorCard";
+
 
 const API_KEY = "844dba0bfd8f3a4f3799f6130ef9e335";
 const API_URL = "https://api.themoviedb.org/3/";
@@ -64,6 +66,7 @@ function App() {
 		<div>
 		<NavBar />
 		<div className="App">
+			
 			<CarouselSlider images={popMoviesImages} />
 			<Search
 				onChange={handleSearch}
@@ -74,6 +77,7 @@ function App() {
 			<div className="movieGrid">
 				{popularMovies ? movies : <p>Loading..</p>}
 			</div>
+			<Cards />
 		</div>
 		</div>
 	
