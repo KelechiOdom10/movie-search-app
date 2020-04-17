@@ -5,7 +5,16 @@ import "@brainhubeu/react-carousel/lib/style.css";
 function CarouselSlider(props) {
 	return (
 		<div>
-			<h1 style={{ textAlign: "left" }}>Upcoming Movies in the UK...</h1>
+			<h1
+				style={{
+					textAlign: "left",
+					margin: "1em",
+					color: "#ff9a00",
+					fontStyle: "italic",
+				}}
+			>
+				Upcoming Movies in the UK...
+			</h1>
 			<Carousel
 				slidesPerPage={5}
 				slidesPerScroll={4}
