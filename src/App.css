@@ -14,22 +14,14 @@ body {
 }
 
 .App-logo {
-	height: 20vmin;
+	height: 40vmin;
 	pointer-events: none;
 }
 
-.myBtn {
-	opacity: 0.5;
-	border-radius: 50%;
-	width: 40px;
-	height: 40px;
-	justify-content: center;
-	background-color: orange;
-}
-
-img {
-	align-items: center;
-	padding-bottom: 40px;
+@media (prefers-reduced-motion: no-preference) {
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
 }
 
 .App-header {
