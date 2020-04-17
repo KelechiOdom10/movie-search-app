@@ -1,5 +1,6 @@
 import React from "react";
 import { Icon } from "semantic-ui-react";
+import { Link } from "@reach/router";
 
 function MovieCard(props) {
 	return (
@@ -12,20 +13,24 @@ function MovieCard(props) {
 				background: "#021822",
 			}}
 		>
-			<img
-				src={props.src}
-				alt=""
-				style={{
-					width: "200px",
-					height: "280px",
-					borderRadius: "5px",
-				}}
-			/>
-			<hr />
-			<h4 style={{ marginTop: "-10px" }}>{props.title}</h4>
-			<p style={{ fontStyle: "italic" }}>{props.date}</p>
-			<Icon name="star" />
-			<span>{props.rating}/10</span>
+			<Link to={props.path} style={{ textDecoration: "none", color: "white" }}>
+				<img
+					src={props.src}
+					alt=""
+					style={{
+						width: "200px",
+						height: "280px",
+						borderRadius: "5px",
+					}}
+				/>
+			</Link>
+			<Link to={props.path} style={{ textDecoration: "none", color: "white" }}>
+				<h4 style={{ marginTop: "-5x" }}>{props.title}</h4>
+
+				<p style={{ fontStyle: "italic" }}>{props.date}</p>
+				<Icon name="star" />
+				<span>{props.rating}/10</span>
+			</Link>
 		</div>
 	);
 }

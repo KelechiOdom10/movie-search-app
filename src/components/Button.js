@@ -11,7 +11,7 @@ function Button(props) {
 				borderRadius: "5px",
 				border: "none",
 				color: "white",
-				background: "#da4302",
+				background: "#ff9a00",
 			}}
 			onClick={props.onClick}
 		>

@@ -1,4 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
+import Home from "./components/Home";
+import Contact from "./components/Contact";
+import About from "./components/About";
+import { Router } from "@reach/router";
+import NavBar from "./components/NavBar";
 import "./App.css";
 import Search from "./components/Search";
 import MovieCard from "./components/MovieCard";
@@ -102,6 +107,21 @@ function App() {
 				onClick={handleLoadMore}
 				style={{ margin: "1em" }}
 			/>
+
+import MovieDetailPage from "./components/MovieDetailPage";
+import BackToTop from "react-back-to-top-button";
+import arrow from "./Logo_copy.png";
+
+function App() {
+	return (
+		<div>
+			<NavBar />
+			<Router>
+				<Home path="/" />
+				<Contact path="contact" />
+				<About path="about" />
+				<MovieDetailPage path="movies/:movieId" />
+			</Router>
 			<BackToTop
 				showOnScrollDown
 				showAt={50}
@@ -111,6 +131,9 @@ function App() {
 				<button
 					className="myBtn"
 				>
+
+				<button className="myBtn">
+
 					<img alt="arrow_up" src={arrow}></img>
 				</button>
 			</BackToTop>
