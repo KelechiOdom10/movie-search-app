@@ -22,11 +22,11 @@ function App() {
 			<BackToTop
 				showOnScrollDown
 				showAt={50}
-				speed={1500}
+				speed={3000}
 				easing="easeInOutQuint"
 			>
 				<button className="myBtn">
-					<img alt="arrow_up" src={arrow}></img>
+					<img alt="arrow_up" className="arrow" src={arrow}></img>
 				</button>
 			</BackToTop>
 		</div>
