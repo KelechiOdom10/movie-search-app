@@ -98,7 +98,7 @@ function About() {
 		<h2>What is the Setup?</h2>
 		<p>
 			To start working on a project, you will need to create a new React app 
-			through the terminal by using <code>npm</code> (or you can also use 
+			through the terminal by using <code>npm</code> (or you can also use{" "}
 			<code>yarn</code>):
 		</p>
 			<code>
@@ -112,6 +112,7 @@ function About() {
 			work. The first one is Semantic UI:
 		</p>
 			<code>yarn add semantic-ui-react</code>
+			<br />
 			<br />
 		<p>
 			How and which components and styles from Semantic-UI you include is completely 
@@ -132,6 +133,7 @@ function About() {
 			</p>
 			<code>npm install @reach/router</code>
 		<br />
+		<br />
 		<p> 
 			More information on how to utilise Reach Router and find the tutorials can be 
 			found{" "}
@@ -148,6 +150,7 @@ function About() {
 			Another component that needs to be installed is the "Back to Top" button: {" "}
 		</p>
 		<code>npm install react-back-to-top-button</code>
+		<br />
 		<br />
 			More information can be found{" "}
 			<a
