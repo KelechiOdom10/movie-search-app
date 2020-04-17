@@ -6,7 +6,7 @@ function MovieAppInfo(props) {
 		<div
 			className="movieInfo"
 			style={{
-				backgroundImage: `linear-gradient(to right, rgba(106, 105, 120, 0.86) 150px, rgba(77, 75, 75, 0.84) 100%),
+				backgroundImage: `linear-gradient(to right, rgb(70, 70, 72) 150px, rgba(25, 23, 23, 0.9) 100%),
                 url(${props.background})`,
 			}}
 		>
