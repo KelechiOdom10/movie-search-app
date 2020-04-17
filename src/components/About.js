@@ -1,7 +1,8 @@
 import React from "react";
 
 function About() {
-	return <div className="aboutpage">
+	return (
+		<div className="aboutpage">
 		<h1>MOVIE SEARCH APP</h1>
 		<h2>Idea behind the project</h2>
 		<p>
@@ -10,6 +11,7 @@ function About() {
 			This project showcases what we have learnt about React from simple reusable components
 			to using APIs.
 		</p>
+		<br />
 		<h2>API Reference</h2>
 		<p>
 			The API used for this project is called{" "}
@@ -39,6 +41,7 @@ function About() {
 			</a>
 			.
 		</p>
+		<br />
 		<h2>How does it work?</h2>
 		<p>
 			The functionality of the app is simple. The app provides users with 
@@ -47,20 +50,17 @@ function About() {
 			popular movies as well as their artwork, ratings and short descriptions.
 			
 		</p>
-		<br />
 		<p>
 			This app can also take user input in a form of Search and return a specific movie the
 			user has searched for. For ease of use we have even included a "Back to Top" button 
 			which can take the user back to the top of the page no matter how far they have 
 			scrolled.
 		</p>
-		<br />
 		<p>
 			There is also the functionality to "Show All" if the user wants to return to 
 			the initial list of movies in the Homepage which will clear the search and 
-			showcases the original listing.
+			will showcase the original listing.
 		</p>
-		<br />
 		<p>
 			Potentially the most eye-catching element on the page is the Carousel which 
 			was implemented using a Carousel component from {" "}
@@ -74,6 +74,11 @@ function About() {
 			. The Carousel rotates every couple of moments to show the upcoming movies 
 			to UK and there is a possibility to use the arrows to either go right or left 
 			to scroll through the movie list.
+		</p>
+		<p>
+			The users can also click on the movies which will take them to an overview 
+			page of the movie which will list a short overview of the plot, the release date, 
+			budget, revenue, rating as well as the list of actors.
 		</p>
 		<br />
 		<h2>Technologies</h2>
@@ -89,6 +94,7 @@ function About() {
 				<li>HTML</li>
 			</ul>
 		</p>
+		<br />
 		<h2>What is the Setup?</h2>
 		<p>
 			To start working on a project, you will need to create a new React app 
@@ -158,6 +164,7 @@ function About() {
 		</p>
 		<code>npm i @brainhubeu/react-carousel</code>
 		<br />
+		<br />
 		<h2>If you would like to contribute:</h2>
 		<p>
 			<ul>
@@ -187,13 +194,15 @@ function About() {
 				</li>
 			</ul>
 		</p>
+		<br />
 		<p> 
 			<h2>Credits</h2>
 			We would like to say thank you to our amazing Apprenticeship coach Richard Ng 
 			who has provided his help and immense support as well a huge "Thank You" to 
 			our teammates in the apprenticeship.
 		</p>
-		</div>;
+		</div>
+	);
 }
 
 export default About;
