@@ -11,6 +11,7 @@ function MovieCard(props) {
 				borderRadius: "5px",
 				margin: "10px",
 				background: "#021822",
+				paddingBottom: ".8em",
 			}}
 		>
 			<Link to={props.path} style={{ textDecoration: "none", color: "white" }}>
@@ -25,7 +26,7 @@ function MovieCard(props) {
 				/>
 			</Link>
 			<Link to={props.path} style={{ textDecoration: "none", color: "white" }}>
-				<h4 style={{ marginTop: "-5x" }}>{props.title}</h4>
+				<h4 style={{ marginTop: ".8em", fontWeight: "bold" }}>{props.title}</h4>
 
 				<p style={{ fontStyle: "italic" }}>{props.date}</p>
 				<Icon name="star" />
