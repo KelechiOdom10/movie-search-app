@@ -230,6 +230,15 @@ p {
 	color: #FFF
 }
 
+.myBtn {
+	opacity: 0.5;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	justify-content: center;
+	background-color: orange;
+}
+
 
 @media only screen and (max-width: 650px) {
 	.insight {
