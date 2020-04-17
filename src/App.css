@@ -39,6 +39,14 @@ body {
 	color: #61dafb;
 }
 
+.aboutpage {
+	text-align: justify;
+	margin: 0 auto;
+	max-width: 800px;
+	font-size: 18px;
+	font-family: 'Roboto', sans-serif;
+}
+
 @keyframes App-logo-spin {
 	from {
 		transform: rotate(0deg);
