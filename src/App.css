@@ -1,38 +1,251 @@
+/* :root{
+  032535 - ffb515 - ff9a00 - ff5700 - da4302 
+} */
+
+body {
+	background-color: #032535;
+	color: white;
+}
+
 .App {
-  text-align: center;
+	text-align: center;
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+.aboutPage {
+	text-align: justify;
+	margin: 0 auto;
+	max-width: 800px;
+	font-size: 18px;
+	padding: 1em;
+	font-family: 'Roboto', sans-serif;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.movieGrid {
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin: 20px auto;
+}
+
+.search {
+	margin: 20px auto;
+	display: flex;
+	justify-content: center;
+}
+
+.search * {
+	margin: 0.2em;
+}
+
+.nav {
+	display: flex;
+	justify-content: space-around;
+	max-height: 8vh;
+	place-items: center;
+	background: linear-gradient(to right, #7b59ff, #ff9a00);
+	text-decoration: none;
+}
+
+.nav-links {
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	text-decoration: none;
+	margin-top: 10px;
+	font-size: medium;
+	font-weight: 600;
+}
+
+.nav-links li {
+	margin-right: 20px;
+	text-decoration: none;
+	padding: 4px;
+	color: white;
+}
+
+.nav-links li:hover {
+	background: #ff9a00;
+	padding: 4px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	border-radius: 5px;
+	border: none;
+	color: white;
+}
+
+.insight {
+	font-family: "Arvo", serif;
+	color: white;
+	font-size: x-large;
+	font-weight: bold;
+}
+
+.insight:hover {
+	color: #ff9a00;
+}
+
+
+.movieInfo {
+	padding: 1.5em;
+	background-size: cover;
+	min-height: 47vh;
+	font-size: 18px;
+	justify-content: center;
+	align-items: center;
+	border: none;
+}
+
+.mainInfo {
+	margin: 0 auto;
+	max-width: 1000px;
+	display: flex;
+	border: none;
+	align-items: center;
+	justify-content: center;
+}
+
+.mainInfoImg {
+	width: auto;
+	border-radius: 10px;
+}
+
+.mainInfo>div {
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+}
+
+.tagLine {
+	color: #b4b4ff;
+	font-style: italic;
+	font-weight: 700;
+}
+
+.mainInfo {
+	font-weight: 800;
+}
+
+.mainInfo h3 {
+	font-weight: 800;
+}
+
+.plot {
+	font-style: italic;
+	color: white;
+	font-weight: 400;
+	text-align: justify;
+	line-height: 2rem;
+}
+
+.lastInfo {
+	display: flex;
+	text-align: start;
+	height: auto;
+	margin-top: .8em;
+}
+
+.lastInfo * {
+	margin-right: .7em;
+}
+
+.actors {
+	max-width: 1200px;
+	margin: 10px auto;
+	justify-content: space-evenly;
+	padding: 1em;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+.main-card {
+	max-width: 230px;
+	height: auto;
+	text-align: center;
+	background: #1a3d4d;
+	border-radius: 5px;
+	margin: 1em;
+	padding-bottom: 1em;
+	box-shadow: 0px, 1px, 10px
+}
+
+
+.image {
+	background: #27617d;
+	width: 230px;
+	height: 330px;
+	border-radius: 3px;
+	margin: 0 auto
+}
+
+.lower-card {
+	background: #1a3d4d;
+	text-align: center;
+	padding-top: 1em;
+}
+
+.lower-card h3,
+h4,
+p {
+	font-size: 15px;
+	margin-bottom: 2px;
+}
+
+.lower-card h3 {
+	color: #ff9a00;
+	font-style: italic;
+
+}
+
+.lower-card h4 {
+	color: #FFF
+}
+
+.myBtn {
+	opacity: 0.7;
+	border-radius: 50%;
+	border: none;
+	width: 40px;
+	height: 40px;
+	justify-content: center;
+	background-color: orange;
+}
+
+.arrow {
+
+	align-items: center;
+	padding-bottom: 40px;
+
+}
+
+@media only screen and (max-width: 650px) {
+	.insight {
+		display: none;
+	}
+
+	.lastInfo {
+		flex-wrap: wrap;
+	}
+
+	.mainInfo {
+		flex-direction: column;
+	}
+
+	.mainInfoImg {
+		width: 90vw;
+	}
 }
